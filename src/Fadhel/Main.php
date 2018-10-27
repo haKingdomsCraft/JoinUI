@@ -22,7 +22,7 @@ class Main extends PluginBase implements Listener{
 		}
     public function openMyForm($player){ 
         $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-        $form = $api->createSimpleForm(function (Player $player, int $data = null){
+        $form = $api->createModalForm(function (Player $sender, $data){
             $result = $data;
             if($result === null){
                 return true;
