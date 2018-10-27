@@ -8,6 +8,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\TextFormat as C;
+use jojoe77777\FormAPI;
 
 class Main extends PluginBase implements Listener{
 	
@@ -22,7 +23,7 @@ class Main extends PluginBase implements Listener{
 		}
     public function openMyForm($player){ 
         $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-        $form = $api->createModalForm(function (Player $sender, $data){
+        $form = $api->createModalForm(function (Player $player, int $data = null){
             $result = $data;
             if($result === null){
                 return true;
@@ -35,7 +36,7 @@ class Main extends PluginBase implements Listener{
             
             });
             $form->setTitle("§lWelcome!");
-            $form->setContent("§eWelcome to the §bServer\n§fIf you found any bugs tell the staff please!");
+            $form->setContent("§eWelcome to the §bServer\n§fIf you found any report it for the staff please!");
             $form->addButton("Play");
             $form->sendToPlayer($player);                  
             return $form;                                            
