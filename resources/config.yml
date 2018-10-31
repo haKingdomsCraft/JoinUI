@@ -1,0 +1,8 @@
+---
+# Join msg
+msg: "Welcome to the server"
+# Form settings
+title: "Welcome"
+content: "Welcome to the server"
+button: "Play"
+...
